@@ -3,6 +3,8 @@ using BenchmarkDotNet.Attributes;
 
 namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
 {
+    [HtmlExporter]
+    [MemoryDiagnoser]
     [DisassemblyDiagnoser(exportCombinedDisassemblyReport: true)]
     public class FibonacciCalc
     {
@@ -14,7 +16,7 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
         // 
         // You can use the discussion panel to compare your results with other students
 
-        [Benchmark(Baseline = true)]
+        [Benchmark(Baseline = true)]        
         [ArgumentsSource(nameof(Data))]
         public ulong Recursive(ulong n)
         {
